@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE H | Professional</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="background-blobs"></div>
+
+    <div class="main-container">
+        <header>
+            <div class="brand">
+                <img src="logo.png" alt="AR Abdul Rahman Professional" class="logo">
+            </div>
+            <div class="header-actions">
+                <button id="export-btn" class="icon-btn-small" title="Download Report"><i class="fas fa-file-download"></i></button>
+                <div class="wallet-badge">
+                    <i class="fas fa-wallet"></i>
+                    <span id="net-balance">₹0</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="glass-panel input-zone">
+            <div class="input-group">
+                <input type="text" id="manual-input" placeholder="e.g. Salary, 50000">
+                <button id="mic-btn" class="icon-btn" title="Speak"><i class="fas fa-microphone"></i></button>
+            </div>
+            <button id="enter-btn" class="action-btn">Add Transaction</button>
+            <p id="status-msg">Tap Mic & Speak (Hinglish/English)</p>
+        </section>
+
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-input" placeholder="Search entries...">
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card credit-card">
+                <h3><i class="fas fa-arrow-down"></i> Income (Credit)</h3>
+                <ul id="credit-list" class="transaction-list"></ul>
+            </div>
+
+            <div class="card debit-card">
+                <h3><i class="fas fa-arrow-up"></i> Expense (Debit)</h3>
+                <ul id="debit-list" class="transaction-list"></ul>
+            </div>
+        </div>
+
+        <div class="glass-panel chart-zone">
+            <canvas id="hisaabChart"></canvas>
+        </div>
+    </div>
+
+    <div id="hbot-widget" class="closed">
+        <div class="hbot-header" onclick="toggleChat()">
+            <span><i class="fas fa-robot"></i> H-Bot</span>
+            <i class="fas fa-chevron-up" id="toggle-icon"></i>
+        </div>
+        <div class="hbot-body">
+            <div id="chat-display">
+                <div class="bot-msg">Hello! I am H-Bot. Ask me about your balance.</div>
+            </div>
+            <input type="text" id="chat-input" placeholder="Type here...">
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
